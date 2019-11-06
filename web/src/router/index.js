@@ -9,16 +9,11 @@ export const routes = [
   {
     path: '/',
     name: 'home',
-    component: Layout,
-    redirect: '/',
+    component: () => import('@/views/home/index'),
     meta: {
       name: i18n.t('nav.home'),
       icon: 'el-icon-s-home'
-    },
-    children: [{
-      path: '',
-      component: () => import('@/views/article/home/index')
-    }]
+    }
   },
   {
     path: '/articles',
